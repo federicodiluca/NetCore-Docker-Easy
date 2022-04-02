@@ -1,0 +1,27 @@
+﻿@model Film
+
+@{
+    ViewData["Title"] = "Modify a Movie";
+}
+
+<h1 class="text-dark">Modify a Movie</h1>
+<br/>
+<a class="btn btn-outline-info" asp-action="Index">Show all Movies</a>
+<br/>
+
+<form method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="No">No.</label>
+        <input class="form-control-range" type="text" asp-for="No" readonly />
+    </div>
+    <div class="form-group">
+        <label asp-for="MovieName">Movie Name</label>
+        <input class="form-control-range" type="text" asp-for="MovieName" />
+    </div>
+    <div class="form-group">
+        <label asp-for="ReleaseYear">Release Year</label>
+        <input class="form-control-range" type="text" asp-for="ReleaseYear" />
+    </div>
+    <button class="btn btn-secondary" type="submit">Modify a movie</button>
+</form>
+<br/>

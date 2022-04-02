@@ -1,0 +1,48 @@
+﻿@model List<Film>
+
+@{
+    ViewData["Title"] = "Movies Release Years";
+}
+
+<h1 class="text-dark">Movies Release Years</h1>
+<br/>
+<a class="btn btn-outline-success" asp-action="Create">Add a New Movie</a>
+<br/>
+
+<div>
+    <table class="table">
+        <tr>
+            <th>S#</th>
+            <th>Movie Name</th>
+            <th>Release Year</th>
+            <th>Action</th>
+            <th>Action</th>
+        </tr>
+        @if (Model?.Any() == true)
+        {
+            foreach (Film flm in Model)
+            {
+                <tr>
+                    <td>@flm.No</td>
+                    <td>@flm.MovieName</td>
+                    <td>@flm.ReleaseYear</td>
+                    <td>
+                        <a asp-route-id="@flm.No" class="btn btn-block btn-dark" asp-action="Update">Edit</a>
+                    </td>
+                    <td>
+                        <form asp-route-id="@flm.No" method="post" asp-action="Remove">
+                            <input class="btn-warning btn btn-block" value=”Remove” type="submit" />
+                        </form>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                No films found.
+            </tr>
+        }
+    </table>
+</div>
+<br/>

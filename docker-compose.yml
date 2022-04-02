@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+  sqldb:
+    image: "mcr.microsoft.com/mssql/server:2019-latest"
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=N3tDockeDemo@!
+    ports:
+        - "1440:1433"
+
+  netcore-docker-easy:
+    image: ${DOCKER_REGISTRY-}netcore-docker-easy
+    build:
+      context: .
+      dockerfile: NetCore-Docker-Easy/Dockerfile
+    depends_on:
+      - sqldb
