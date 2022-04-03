@@ -4,20 +4,31 @@
     ViewData["Title"] = "Add a New Movie";
 }
 
-<h1 class="text-dark">Add a New Movie</h1>
-<br/>
-<a class="btn btn-outline-info" asp-action="Index">Show all Movies</a>
-<br/>
-
-<div class="text-danger" asp-validation-summary="All"></div>
-
-<form enctype="application/x-www-form-urlencoded" method="post">
-    <div>
-        <label>Movie Name</label>
-        <input class="form-control-range" asp-for="MovieName" type="text" />
-        <label>Release Year</label>
-        <input class="form-control-range" asp-for="ReleaseYear" type="text" /><br />
-        <input class="btn btn-secondary" value="Add New" type="submit" />
+<div class="row m-4">
+    <div class="column">
+        <h1 class="text-dark">Add a New Movie</h1>
     </div>
-</form>
-<br/>
+</div>
+
+<div class="row m-4">
+    <div class="row m-2">
+        <div class="column col-3">
+            <a class="btn btn-outline-info" asp-action="Index">Show all Movies</a>
+        </div>
+        <div class="column col-3">
+            <div class="text-danger" asp-validation-summary="All"></div>
+        </div>
+    </div>
+
+    <div class="row m-2">
+        <form enctype="application/x-www-form-urlencoded" method="post">
+            <div>
+                <label>Movie Name</label>
+                <input class="form-control-range" asp-for="MovieName" type="text" />
+                <label>Release Year</label>
+                <input class="form-control-range" asp-for="ReleaseYear" type="text" /><br />
+                <input class="btn btn-secondary" value="Add New" type="submit" />
+            </div>
+        </form>
+    </div>
+</div>

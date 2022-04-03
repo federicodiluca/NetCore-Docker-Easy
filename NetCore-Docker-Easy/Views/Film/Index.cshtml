@@ -4,45 +4,52 @@
     ViewData["Title"] = "Movies Release Years";
 }
 
-<h1 class="text-dark">Movies Release Years</h1>
-<br/>
-<a class="btn btn-outline-success" asp-action="Create">Add a New Movie</a>
-<br/>
+<div class="row m-4">
+    <div class="column">
+        <h1 class="text-dark">Movies Release Years</h1>
+    </div>
+</div>
 
-<div>
-    <table class="table">
-        <tr>
-            <th>S#</th>
-            <th>Movie Name</th>
-            <th>Release Year</th>
-            <th>Action</th>
-            <th>Action</th>
-        </tr>
-        @if (Model?.Any() == true)
-        {
-            foreach (Film flm in Model)
+<div class="row m-4">
+    <div class="row m-2">
+        <div class="column col-3">
+            <a class="btn btn-outline-success" asp-action="Create">Add a New Movie</a>
+        </div>
+    </div>
+    <div class="row m-2">
+        <table class="table">
+            <tr>
+                <th>S#</th>
+                <th>Movie Name</th>
+                <th>Release Year</th>
+                <th></th>
+                <th></th>
+            </tr>
+            @if (Model?.Any() == true)
+            {
+                foreach (Film flm in Model)
+                {
+                    <tr>
+                        <td>@flm.No</td>
+                        <td>@flm.MovieName</td>
+                        <td>@flm.ReleaseYear</td>
+                        <td>
+                            <a asp-route-id="@flm.No" class="btn btn-block btn-dark" asp-action="Update">Edit</a>
+                        </td>
+                        <td>
+                            <form asp-route-id="@flm.No" method="post" asp-action="Remove">
+                                <input class="btn-warning btn btn-block" value=”Remove” type="submit" />
+                            </form>
+                        </td>
+                    </tr>
+                }
+            }
+            else
             {
                 <tr>
-                    <td>@flm.No</td>
-                    <td>@flm.MovieName</td>
-                    <td>@flm.ReleaseYear</td>
-                    <td>
-                        <a asp-route-id="@flm.No" class="btn btn-block btn-dark" asp-action="Update">Edit</a>
-                    </td>
-                    <td>
-                        <form asp-route-id="@flm.No" method="post" asp-action="Remove">
-                            <input class="btn-warning btn btn-block" value=”Remove” type="submit" />
-                        </form>
-                    </td>
+                    <td colspan="5">No movies found</td>
                 </tr>
             }
-        }
-        else
-        {
-            <tr>
-                No films found.
-            </tr>
-        }
-    </table>
+        </table>
+    </div>
 </div>
-<br/>

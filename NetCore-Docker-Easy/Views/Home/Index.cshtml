@@ -2,7 +2,24 @@
     ViewData["Title"] = "Home";
 }
 
-<h1 class="text-dark">Homepage</h1>
-<br/>
-<a class="btn btn-outline-dark" asp-area="" asp-controller="Film" asp-action="Index">Film Section</a>
-<br/>
+<div class="row m-4">
+    <h1 class="text-dark">DotNet, SqlServer, SonarQube & Docker</h1>
+    <p>Demo CRUD Web App, using .NET 6, Sql Server and SonarQube for testing Docker integration.</p>
+    
+    <h3 class="text-dark">Database (Sql Server instance)</h3>
+    <p>Once you'll be running the docker container, the database will we exposed and accessible at `localhost,1440`</p>
+
+    <h3 class="text-dark">SonarQube</h3>
+    <p>
+        The SonarQube dashboard will be listening at <a href="http://localhost:9000/" target="_blank">localhost:9000</a>.<br />
+        Follow the local-section instructions for testing SonarQube using the cli-tool.<br />
+        You'll find these instructions, with the correct token, in your local SonarQube Dashboard once you'll have configured the project.
+    </p>
+    <p>
+</div>
+
+<div class="row m-4">
+    <div class="column col-3">
+        <a class="btn btn-outline-dark" asp-area="" asp-controller="Film" asp-action="Index">Film Section (CRUD)</a>
+    </div>
+</div>
