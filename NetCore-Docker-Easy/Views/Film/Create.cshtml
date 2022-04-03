@@ -15,20 +15,27 @@
         <div class="column col-3">
             <a class="btn btn-outline-info" asp-action="Index">Show all Movies</a>
         </div>
-        <div class="column col-3">
-            <div class="text-danger" asp-validation-summary="All"></div>
-        </div>
     </div>
 
     <div class="row m-2">
-        <form enctype="application/x-www-form-urlencoded" method="post">
-            <div>
-                <label>Movie Name</label>
-                <input class="form-control-range" asp-for="MovieName" type="text" />
-                <label>Release Year</label>
-                <input class="form-control-range" asp-for="ReleaseYear" type="text" /><br />
-                <input class="btn btn-secondary" value="Add New" type="submit" />
-            </div>
-        </form>
+        <div class="column col-4">
+            <form enctype="application/x-www-form-urlencoded" method="post">
+                <div class="form-group m-2">
+                    <label for="movieName">Movie Name</label>
+                    <input type="text" class="form-control" id="movieName" asp-for="MovieName" placeholder="Star Wars: Episode IV - A New Hope">
+                </div>
+                <div class="form-group m-2">
+                    <label for="movieYear">Release Year</label>
+                    <input type="number" class="form-control" id="movieYear" asp-for="ReleaseYear" placeholder="1977">
+                </div>
+                <div class="row m-2">
+                    <input type="submit" class="btn btn-secondary" value="Add New" />
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="text-danger" asp-validation-summary="All"></div>
     </div>
 </div>

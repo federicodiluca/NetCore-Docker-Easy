@@ -5,7 +5,7 @@ namespace NetCore_Docker_Easy.Models
     public class Film
     {
         [Required]
-        public string ReleaseYear { get; set; } = string.Empty;
+        public int ReleaseYear { get; set; } = 1970;
 
         [Required]
         [Key]
