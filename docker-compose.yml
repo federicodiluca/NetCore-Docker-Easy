@@ -16,3 +16,24 @@ services:
       dockerfile: NetCore-Docker-Easy/Dockerfile
     depends_on:
       - sqldb
+  
+  sonarqube:
+    image: sonarqube
+    depends_on:
+      - sqldb
+    environment:
+      sonar__jdbc__url: jdbc:sqlserver://sqldb/sonar
+      sonar__jdbc__username: sa
+      sonar__jdbc__password: N3tDockeDemo@!
+    ports:
+    - "9000:9000"
+    - "9092:9092"
+    volumes:
+      - sonarqube_data:/opt/sonarqube/data
+      - sonarqube_extensions:/opt/sonarqube/extensions
+      - sonarqube_logs:/opt/sonarqube/logs
+    
+volumes:
+  sonarqube_data:
+  sonarqube_extensions:
+  sonarqube_logs:
