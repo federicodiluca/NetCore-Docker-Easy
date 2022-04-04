@@ -1,7 +1,7 @@
 # DotNet, SqlServer, SonarQube & Docker
 Demo CRUD Web App, using .NET 6, Sql Server and SonarQube for testing Docker integration.
 
-You need [Docker Desktop](https://www.docker.com/products/docker-desktop) to run this repo.
+Make sure you're using *Docker-Compose* launch settings and your [Docker Desktop](https://www.docker.com/products/docker-desktop) is updated!
 
 
 ## Database (Sql Server instance)
@@ -12,7 +12,12 @@ Once you'll be running the docker container, the database will we exposed and ac
 ## SonarQube
 The SonarQube dashboard will be listening at [localhost:9000](http://localhost:9000/).
 
-Follow the local-section instructions for testing SonarQube using the cli-tool.
+In order to use it, make sure you have Java SDK o JRE installed and JAVA_HOME as systema variables.
+
+1. Login with `admin` and `admin`, then you'll need to choose a new password;
+2. Select "Manually" and create a new project (ex. "DotNet-Docker-Easy");
+3. Follow the "Locally" instructions for testing SonarQube using the *CLI Tool*;
+4. Once done, the dashboard will automatically refresh and show the report.
 
 ### Test example
 You'll find these instructions, with the correct token, in your local SonarQube Dashboard once you'll have configured the project.
