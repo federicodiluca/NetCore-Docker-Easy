@@ -1,7 +1,7 @@
 # DotNet, SqlServer, SonarQube & Docker
 Demo CRUD Web App, using .NET 6, Sql Server and SonarQube for testing Docker integration.
 
-Make sure you're using *Docker-Compose* launch settings and your [Docker Desktop](https://www.docker.com/products/docker-desktop) is updated!
+Make sure you're using the project *Docker-Compose* as startup project in Visual Studio and your [Docker Desktop](https://www.docker.com/products/docker-desktop) is updated!
 
 
 ## Database (Sql Server instance)
